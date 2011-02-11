@@ -1,0 +1,120 @@
+/* line 4, ../../../../../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 6, ../../../../../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+html {
+  font-size: 100.01%;
+}
+
+/* line 16, ../../../../../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+pre, a, abbr, acronym, address, code, del, dfn, em, img,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../../../../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+blockquote, q {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  quotes: "" "";
+}
+/* line 45, ../../../../../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+}
+
+/* line 20, ../../../../../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+th, td, caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 22, ../../../../../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+table {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+/* line 24, ../../../../../../../.rvm/gems/ruby-1.9.2-head/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 22, ../../../app/stylesheets/screen.sass */
+#header {
+  width: 900px;
+  padding: 8px 0 8px 0;
+  background-color: #eeeeee;
+  overflow: hidden;
+  *zoom: 1;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 28, ../../../app/stylesheets/screen.sass */
+#header #nav {
+  display: inline;
+  float: left;
+}
+/* line 30, ../../../app/stylesheets/screen.sass */
+#header #account {
+  display: inline;
+  float: right;
+}
+
+/* line 33, ../../../app/stylesheets/screen.sass */
+#content {
+  width: 900px;
+  padding: 8px 0 8px 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 38, ../../../app/stylesheets/screen.sass */
+#footer {
+  padding: 8px 0 8px 0;
+  width: 900px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}

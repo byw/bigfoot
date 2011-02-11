@@ -1,0 +1,42 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset"
+
+// To configure blueprint, edit the partials/base.sass file.
+// @import "partials/base"
+
+// Import all the default blueprint modules so that we can access their mixins.
+// @import "blueprint"
+
+// Combine the partials into a single screen stylesheet.
+// @import "partials/form"
+
+@import "compass/utilities/general/clearfix"
+@import "compass/utilities/general/float"
+
+$content-width: 900px
+
+@mixin align-center()
+  margin-left: auto
+  margin-right: auto
+
+#header
+  width: $content-width
+  padding: 8px 0 8px 0
+  background-color: #eee
+  @include clearfix
+  @include align-center
+  #nav
+    @include float-left
+  #account
+    @include float-right
+
+#content
+  width: $content-width
+  padding: 8px 0 8px 0
+  @include align-center
+
+#footer
+  padding: 8px 0 8px 0
+  width: $content-width
+  text-align: center
+  @include align-center

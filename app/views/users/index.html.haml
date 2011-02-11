@@ -1,0 +1,4 @@
+%ul#users
+  -for user in @users
+    %li[user]
+      .username=link_to user.username, user_url(user)

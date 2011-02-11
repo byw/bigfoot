@@ -1,0 +1,5 @@
+=simple_form_for @user_session, :url => user_session_url do |form|
+  =form.input :username
+  =form.input :password
+  =form.submit
+=link_to 'sign up', new_user_url

@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    =include_stylesheets :workspace, :media => :all
+    /[if lt IE 8]
+      =stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
+    =include_javascripts :workspace
+    =csrf_meta_tag
+  %body
+    #header
+      #nav
+        =link_to 'home', '/'
+      #account
+        -if current_user
+          =link_to current_user.username, edit_user_url(current_user)
+          =link_to 'logout', user_session_url, :method => :delete
+        -else
+          =link_to 'sign up', new_user_url
+          =link_to 'login', new_user_session_url
+    #content
+      =yield
+    #footer
+      footer

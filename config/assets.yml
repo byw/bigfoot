@@ -1,0 +1,15 @@
+embed_assets: on
+
+javascripts:
+  workspace:
+    - public/javascripts/jquery.js
+    - public/javascripts/rails.js
+    - public/javascripts/coffee.js
+    - public/javascripts/application.js
+
+stylesheets:
+  common:
+  workspace:
+    - public/stylesheets/compiled/screen.css
+  empty:
+
