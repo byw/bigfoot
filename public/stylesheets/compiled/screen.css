@@ -118,3 +118,17 @@ a img {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* line 46, ../../../app/stylesheets/screen.sass */
+#topic #comments {
+  background-color: #dddddd;
+  margin-left: 8px;
+}
+/* line 51, ../../../app/stylesheets/screen.sass */
+#topic #comments .comment .ballot .vote.voted {
+  background-color: #cccccc;
+}
+/* line 53, ../../../app/stylesheets/screen.sass */
+#topic #comments .comment .children {
+  margin-left: 8px;
+}

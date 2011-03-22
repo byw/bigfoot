@@ -1,0 +1,13 @@
+#parent
+  -if @comment.parent
+    reply to
+    = link_to 'comment', topic_url(@comment.parent.topic, :anchor => "comment_#{@comment.parent.id}")
+    .body= @comment.parent.body
+  -else
+    reply to topic
+    .title= link_to @topic.title, topic_url(@topic)
+    .body= @topic.body
+= simple_form_for [@topic, @comment] do |form|
+  = form.input :body
+  = form.input :parent_id, :as => :hidden
+  = form.submit

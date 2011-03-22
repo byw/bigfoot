@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   inherit_resources
-  before_filter :require_user, :except => [:new, :create, :index]
+  before_filter :require_user, :except => [:new, :create, :index, :show]
+  before_filter :load_resource_for_authorization
+  authorize_resource
 
   create! do |success|
     success.html { redirect_back_or_default user_url(@user) }

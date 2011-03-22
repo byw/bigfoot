@@ -1,0 +1,14 @@
+%ul#categories
+  -for category in @categories
+    %li[category]
+      =link_to category.name, category_topics_url(category)
+=link_to 'new topic', new_topic_url if can? :create, Topic
+%ul#topics
+  -for topic in @topics
+    %li[topic]
+      .title=link_to topic.title, topic_url(topic)
+      .info
+        by #{link_to topic.user.username, topic.user}
+        #{time_ago_in_words topic.created_at} ago
+      -if can?(:update, topic) || can?(:destroy, topic)
+        =link_to 'edit', edit_topic_url(topic)

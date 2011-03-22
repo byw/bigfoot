@@ -1,10 +1,7 @@
 class ApplicationController < ActionController::Base
   include InheritedResources::DSL
   protect_from_forgery
-  filter_parameter_logging :password, :password_confirmation
   helper_method :current_user
-  before_filter :load_resource_for_authorization
-  authorize_resource
 
   protected
 
@@ -30,9 +27,13 @@ class ApplicationController < ActionController::Base
     
     def require_user
       unless current_user
-        store_location
         flash[:notice] = "You must be logged in to access this page"
-        redirect_to new_user_session_url
+        if request.xhr?
+          render :json => {:message => "Login required"}, :status => 401
+        else
+          store_location
+          redirect_to new_user_session_url
+        end
         return false
       end
     end

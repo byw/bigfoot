@@ -13,6 +13,7 @@
       #account
         -if current_user
           =link_to current_user.username, edit_user_url(current_user)
+          =current_user.total_karma
           =link_to 'logout', user_session_url, :method => :delete
         -else
           =link_to 'sign up', new_user_url

@@ -7,7 +7,7 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 require "#{RAILS_ROOT}/spec/factories"
 
-[User].each(&:delete_all)
+[Category, User, Topic, Comment].each(&:delete_all)
 
 users = []
 users << Factory.create(:user, :username => 'bob')
@@ -15,3 +15,21 @@ users << Factory.create(:user, :username => 'bob')
   users << Factory.create(:user)
 end
 
+3.times do
+  category = Factory.create(:category)
+  3.times do
+    topic = Factory.create(:topic, :user => users.sample, :category => category)
+    comments = []
+    5.times do
+      comments << Factory.create(:comment,
+                                 :topic => topic,
+                                 :user => users.sample)
+    end
+    11.times do
+      comments << Factory.create(:comment,
+                                 :topic => topic,
+                                 :user => users.sample,
+                                 :parent_id => comments.sample.id)
+    end
+  end
+end

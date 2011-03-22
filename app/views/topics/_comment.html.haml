@@ -1,0 +1,26 @@
+.comment{:comment_id => comment.id, :id => "comment_#{comment.id}"}
+  -unless comment.deleted
+    .ballot
+      -if can? :create, CommentVote
+        -if @current_user_votes[comment.id]
+          %a.vote.voted like
+        -else
+          =link_to 'like', comment_votes_url(:comment_id => comment.id, :format => :json), :method => :post, :class => "vote", :remote => true
+    .info
+      by
+      = link_to comment.user.username, user_url(comment.user)
+      = time_ago_in_words comment.created_at
+      ago
+    .body
+      = comment.body
+    .actions
+      -if can? :create, Comment
+        = link_to 'reply', new_topic_comment_url(@topic, :parent_id => comment.id), :class => 'reply'
+      -if can? :edit, comment
+        = link_to 'edit', edit_topic_comment_url(@topic, comment), :class => 'edit'
+      -if can? :destroy, comment
+        = link_to 'delete', comment_url(comment), :class => 'delete', :method => :delete, :confirm => 'Delete this comment?'
+  -else
+    .deleted Deleted
+  .children
+    = render :partial => "topics/comment", :collection => comment.children

@@ -1,12 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
+gem 'rails', '3.0.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'sqlite3-ruby', :require => 'sqlite3'
+#gem 'pg'
 gem 'inherited_resources'
 gem 'authlogic', :git => 'git://github.com/binarylogic/authlogic.git'
+gem 'devise'
 gem 'cancan'
 gem 'simple_form'
 #gem 'dynamic_form' #for error_messages_on et al.
@@ -15,7 +18,7 @@ gem "compass"
 gem "hassle", :git => "git://github.com/koppen/hassle.git" #fixes compass on heroku
 gem 'jammit'
 gem 'barista', '~> 1.0'
-
+gem 'will_paginate'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -39,8 +42,11 @@ gem 'barista', '~> 1.0'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+group :development do
+  gem 'mongrel'
+end
 group :development, :test, :cucumber do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
   gem "ffaker"
   gem "factory_girl", ">=2.0.0.beta1"
 end

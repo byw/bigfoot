@@ -1,9 +1,23 @@
 StarterTemplate::Application.routes.draw do
+  resources :comment_votes
+
+  resources :categories do
+    resources :topics do
+      resources :comments
+    end
+  end
+
+  resources :comments
+
+  resources :topics do
+    resources :comments
+  end
+
   resources :users
 
   resource :user_session, :controller => 'user_sessions'
 
-  root :to => "users#index"
+  root :to => "topics#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

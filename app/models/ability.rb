@@ -3,14 +3,21 @@ class Ability
 
   def initialize(user)
     can :create, User
-    can [:read, :index], User
+    can :read, User
     can :create, UserSession
+
+    can :read, Topic
     if user
       if user.admin?
         can :manage, :all
       end
       can [:update, :destroy], User, :id => user.id
       can :destroy, UserSession
+      can :create, Topic
+      can [:update, :destroy], Topic, :user_id => user.id
+      can :create, Comment
+      can [:update, :destroy], Comment, :user_id => user.id
+      can :create, CommentVote
     end
     # Define abilities for the passed in user here. For example:
     #
