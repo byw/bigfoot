@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   inherit_resources
   respond_to :html, :json
   belongs_to :topic, :optional => true
-  before_filter :require_user, :except => [:show]
+  before_filter :authenticate_user!, :except => [:show]
   before_filter :load_resource_for_authorization
   authorize_resource
   

@@ -2,7 +2,7 @@ class CommentVotesController < ApplicationController
   inherit_resources
   actions :create, :destroy
   respond_to :json
-  before_filter :require_user, :except => [:show]
+  before_filter :authenticate_user!, :except => [:show]
   before_filter :load_resource_for_authorization
   authorize_resource
 

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   inherit_resources
-  before_filter :require_user, :except => [:new, :create, :index, :show]
+  before_filter :authenticate_user!, :except => [:new, :create, :index, :show]
   before_filter :load_resource_for_authorization
   authorize_resource
 

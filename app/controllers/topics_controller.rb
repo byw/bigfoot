@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
   inherit_resources
   respond_to :html, :json
   belongs_to :category, :optional => true, :finder => :find_by_url_name
-  before_filter :require_user, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show]
   before_filter :load_resource_for_authorization
   authorize_resource
 

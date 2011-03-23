@@ -1,4 +1,6 @@
 StarterTemplate::Application.routes.draw do
+  devise_for :users
+
   resources :comment_votes
 
   resources :categories do
@@ -13,9 +15,9 @@ StarterTemplate::Application.routes.draw do
     resources :comments
   end
 
-  resources :users
+  resources :users, :only => [:index, :show, :destroy, :edit, :update]
 
-  resource :user_session, :controller => 'user_sessions'
+  #resource :user_session, :controller => 'user_sessions'
 
   root :to => "topics#index"
 

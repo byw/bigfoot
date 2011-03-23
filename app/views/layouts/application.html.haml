@@ -14,9 +14,9 @@
         -if current_user
           =link_to current_user.username, edit_user_url(current_user)
           =current_user.total_karma
-          =link_to 'logout', user_session_url, :method => :delete
+          =link_to 'logout', destroy_user_session_url
         -else
-          =link_to 'sign up', new_user_url
+          =link_to 'sign up', new_user_registration_url
           =link_to 'login', new_user_session_url
     #content
       =yield

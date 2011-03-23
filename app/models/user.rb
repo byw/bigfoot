@@ -1,18 +1,17 @@
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable, :lockable and :timeoutable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :username, :email, :password, :password_confirmation, :remember_me
   has_many :topics
   has_many :comments
   has_many :comment_votes
 
-  attr_accessible :email, :password, :password_confirmation
-  
-  acts_as_authentic do |config|
-    config.merge_validates_format_of_login_field_options :with => /\A\w[\w\-\d]+$/,
-      :message => I18n.t('error_messages.login_invalid', 
-                         :default => "should use only letters, numbers, spaces, _ , and -")
-    config.merge_validates_length_of_email_field_options :allow_blank => true
-    config.merge_validates_uniqueness_of_email_field_options :allow_blank => true
-    config.merge_validates_format_of_email_field_options :allow_blank => true
-  end
+  validates :username, :presence => true
+  validates_format_of :username, :with => /^[a-z|0-9|-]+$/, :message => 'can only contain letters, numbers, and -'
 
   def total_karma
     self.comment_karma + self.topic_karma
