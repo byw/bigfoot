@@ -1,20 +1,85 @@
-HOST: http://www.google.com/
-
---- Sample API v2 ---
----
-Welcome to the our sample API documentation. All comments can be written in (support [Markdown](http://daringfireball.net/projects/markdown/syntax) syntax)
----
-
---
-Shopping Cart Resources
-The following is a section of resources related to the shopping cart
---
-List products added into your shopping-cart. (comment block again in Markdown)
-GET /shopping-cart
-< 200
-< Content-Type: application/json
-{ "items": [
-{ "url": "/shopping-cart/1", "product":"2ZY48XPZ", "quantity": 1, "name": "New socks", "price": 1.25 }
-] }
+FORMAT: 1A
+HOST: http://patientos.ep.dev.pos/api
 
 
+# Scratchbook
+TODO
+
+# Group Application
+Notes related resources of the **Application API**
+
+
+## Archived ordersets [/ordersets/archives]
+### Gets the current login context. [GET]
+
++ Parameters
+    + search_term (optional, string) ... Filter by partial string match based on any of the following: last name, 'last_name, first_name', date of birth, MRN, and insurance number.
+The partial matching can start at any position in the string. (eg. "ith" matches "Smith")
+    + dob (optional, string) ... Filter by the patient's date of birth, using the format yyyy-mm-dd. (eg. 2013-07-30)
+    + first_name (optional, string) ... Filter by the patient's first name. Must match the entire string.
+    + hcn (optional, string) ... Filter by the patient's Health Care Number (insurance number). Must match the entire string.
+    + last_name (optional, string) ... Filter by the patient's last name. Must match the entire string.
+    + location (optional, string) ... Filter by the patient's location based on the encounters location field.
+    + mrn (optional, string) ... Filter by the patient's Medical Record Number. Must match the entire string.
+    + per_page (optional, string) ... Limit the output to a certain number of ADT Patients.
+    + page (optional, string) ... The paging offset to start at.
+    + unique_patient (optional, string) ... Remove duplicates based on first_name, middle_name, last_name, and mrn
+    + _id (optional, string) ... Will return an array of 1 matching that patient id.
+    
++ Response 200 (application/json)
+        {
+            "total": 1557,
+            "data":
+            [
+                {
+                    "saved_document_summary":
+                    {
+                        "id_saved_orderset":"001c2ed9-013b-fec7-6fe4-7f000101aa77",
+                        "title":"WSIB REC Multidisciplinary Health Care Assessment Summary Report",
+                        "id_local_orderset_info":1005553,
+                        "active_version":14,
+                        "version":5,
+                        "facility_id":null,
+                        "id_entrypoint_client":3,
+                        "id_entrypoint_user":32,
+                        "id_approving_user":null,
+                        "id_patient":6555,
+                        "patient_number":"MRN3608520232",
+                        "state":"Submitted",
+                        "draft_ts":"2012-11-14T18:09:46Z",
+                        "effective_at":"2012-11-14T18:09:47Z",
+                        "visible":"Y",
+                        "user_given_name_1":"Fairooz",
+                        "user_family_name":"Hussain",
+                        "family_name":"Smith",
+                        "given_name_1":"Aline",
+                        "given_name_2":"Yvonne"
+                    }
+                },
+                {
+                    "saved_document_summary":
+                    {
+                        "id_saved_orderset":"001daaaf-013b-f68b-19d9-7f000101aa77",
+                        "title":"WSIB REC Multidisciplinary Health Care Assessment Summary Report",
+                        "id_local_orderset_info":1005553,
+                        "active_version":14,
+                        "version":5,
+                        "facility_id":null,
+                        "id_entrypoint_client":3,
+                        "id_entrypoint_user":32,
+                        "id_approving_user":null,
+                        "id_patient":6597,
+                        "patient_number":"MRN7617850040",
+                        "state":"Submitted",
+                        "draft_ts":"2012-11-14T18:11:13Z",
+                        "effective_at":"2012-11-14T18:11:14Z",
+                        "visible":"Y",
+                        "user_given_name_1":"Fairooz",
+                        "user_family_name":"Hussain",
+                        "family_name":"Jones",
+                        "given_name_1":"Edmund",
+                        "given_name_2":"Ty"
+                    }
+                }
+            ]
+        }   
