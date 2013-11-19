@@ -153,3 +153,55 @@ The partial matching can start at any position in the string. (eg. "ith" matches
                 }
             ]
         }
+        
+        
+        
+# Group Associated Documents   
+
+## Associated Documents [/associated_documents]
+### Gets a list of associated documents. [GET]
+
++ Parameter
+    + legacy_tx_id (string) ... The id of the document (i.e. /api/documents/search output returned id)
+    
++ Response 200 (application/json)
+
+        {
+            "data":
+            [
+                {
+                    "associated_document":
+                    {
+                        "title":"Bowel Care Clinical Protocol",
+                        "docType":"Clinical Protocol",
+                        "id":54,
+                        "hypermedia_links":
+                        {
+                            "imageUrls":
+                            [
+                                "http://patientos.aw.dev.pos:3000/api/associated_documents/54/page/1.png",
+                                "http://patientos.aw.dev.pos:3000/api/associated_documents/54/page/2.png"
+                            ],
+                            "pdfUrl":"http://patientos.aw.dev.pos:3000/api/associated_documents/54.pdf"
+                        }
+                    }
+                },
+                {
+                    "associated_document":
+                    {
+                        "title":"Hypoglycemia Management Clinical Protocol",
+                        "docType":"Clinical Protocol",
+                        "id":55,
+                        "hypermedia_links":
+                        {
+                            "imageUrls":
+                            [
+                                "http://patientos.aw.dev.pos:3000/api/associated_documents/55/page/1.png",
+                                "http://patientos.aw.dev.pos:3000/api/associated_documents/55/page/2.png"
+                            ],
+                            "pdfUrl":"http://patientos.aw.dev.pos:3000/api/associated_documents/55.pdf"
+                        }
+                    }
+                }
+            ]
+        }
