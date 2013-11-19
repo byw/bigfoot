@@ -192,7 +192,7 @@ The partial matching can start at any position in the string. (eg. "ith" matches
             ]
         }
         
-## Work task [/liveq/work_tasks/@{work_task_id}]
+## Work task [/liveq/work_tasks/{work_task_id}]
 ### Show the details of a work task (beta) [GET]
 
 + Parameters
@@ -340,6 +340,429 @@ The partial matching can start at any position in the string. (eg. "ith" matches
                 }
             ]
         }
+        
+## Complete a work task [/liveq/work_tasks/{work_task_id}/complete]
+### Transitions the work task to a "Completed" status (beta) [POST]
+
++ Parameters
+    + work_task_id (string) ... Id of the work task
+
++ Response 200 (application/json)
+
+        {
+            "work_task": {
+                "id": 1,
+                "status": "Completed",
+                "created_at": "2013-07-24T02:37:32Z",
+                "updated_at": "2013-10-15T16:35:01Z",
+                "completed_at": "2013-10-15T16:35:01Z",
+                "saved_document_summary": {
+                    "id_saved_orderset": "0e895786-0140-e7c9-36bd-7f000101aa77",
+                    "title": "ICU Ventilated Patient Admission Order Set",
+                    "active_version": 5,
+                    "version": 5,
+                    "facility_id": "",
+                    "id_entrypoint_client": 3,
+                    "id_entrypoint_user": 13,
+                    "id_approving_user": null,
+                    "id_patient": 6890,
+                    "state": "Submitted",
+                    "draft_ts": null,
+                    "effective_at": "2013-07-24T02:37:35Z",
+                    "visible": "Y",
+                    "user_given_name_1": "Alfred",
+                    "user_family_name": "Wong",
+                    "id_local_document_info": 10,
+                    "mrn": "MRN3094926559",
+                    "last_name": "Smith",
+                    "first_name": "Boris",
+                    "middle_name": "Sid",
+                    "evidence_available": true,
+                    "associated_documents_available": true
+                },
+                "notes": [
+                    {
+                        "note": {
+                            "id": 8,
+                            "content": "test",
+                            "created_at": "2013-07-31T19:14:20Z",
+                            "updated_at": "2013-07-31T19:14:20Z",
+                            "entrypoint_user": {}
+                        }
+                    },
+                    {
+                        "note": {
+                            "id": 9,
+                            "content": "Getting drugs ready",
+                            "created_at": "2013-07-31T19:17:24Z",
+                            "updated_at": "2013-07-31T19:17:24Z",
+                            "entrypoint_user": {}
+                        }
+                    },
+                    {
+                        "note": {
+                            "id": 13,
+                            "content": "Something of value",
+                            "created_at": "2013-10-17T20:58:14Z",
+                            "updated_at": "2013-10-17T20:58:14Z",
+                            "entrypoint_user": {
+                                "first_name": "Alfred",
+                                "middle_name": "",
+                                "last_name": "Wong"
+                            }
+                        }
+                    }
+                ],
+                "task_queue": {
+                    "id": 3,
+                    "name": "Pharmacy"
+                }
+            }
+        }
+
+## Discard a work task [/liveq/work_tasks/<work_task_id>/discard]
+### Transitions the work task to a "Discarded" status (beta) [POST]
+
++ Parameters
+    + work_task_id (string) ... Id of the work task
+
++ Response 200 (application/json)
+
+        {
+            "work_task": {
+                "id": 1,
+                "status": "Discarded",
+                "created_at": "2013-07-24T02:37:32Z",
+                "updated_at": "2013-10-15T16:35:01Z",
+                "completed_at": "2013-10-15T16:35:01Z",
+                "saved_document_summary": {
+                    "id_saved_orderset": "0e895786-0140-e7c9-36bd-7f000101aa77",
+                    "title": "ICU Ventilated Patient Admission Order Set",
+                    "active_version": 5,
+                    "version": 5,
+                    "facility_id": "",
+                    "id_entrypoint_client": 3,
+                    "id_entrypoint_user": 13,
+                    "id_approving_user": null,
+                    "id_patient": 6890,
+                    "state": "Submitted",
+                    "draft_ts": null,
+                    "effective_at": "2013-07-24T02:37:35Z",
+                    "visible": "Y",
+                    "user_given_name_1": "Alfred",
+                    "user_family_name": "Wong",
+                    "id_local_document_info": 10,
+                    "mrn": "MRN3094926559",
+                    "last_name": "Smith",
+                    "first_name": "Boris",
+                    "middle_name": "Sid",
+                    "evidence_available": true,
+                    "associated_documents_available": true
+                },
+                "notes": [
+                    {
+                        "note": {
+                            "id": 8,
+                            "content": "test",
+                            "created_at": "2013-07-31T19:14:20Z",
+                            "updated_at": "2013-07-31T19:14:20Z",
+                            "entrypoint_user": {}
+                        }
+                    },
+                    {
+                        "note": {
+                            "id": 9,
+                            "content": "Getting drugs ready",
+                            "created_at": "2013-07-31T19:17:24Z",
+                            "updated_at": "2013-07-31T19:17:24Z",
+                            "entrypoint_user": {}
+                        }
+                    },
+                    {
+                        "note": {
+                            "id": 13,
+                            "content": "Something of value",
+                            "created_at": "2013-10-17T20:58:14Z",
+                            "updated_at": "2013-10-17T20:58:14Z",
+                            "entrypoint_user": {
+                                "first_name": "Alfred",
+                                "middle_name": "",
+                                "last_name": "Wong"
+                            }
+                        }
+                    }
+                ],
+                "task_queue": {
+                    "id": 3,
+                    "name": "Pharmacy"
+                }
+            }
+        }
+        
+        
+## Complete a work task [/liveq/work_tasks/{work_task_id}/complete]
+### Transitions the work task to a "Completed" status (beta) [POST]
+
++ Parameters
+    + work_task_id (string) ... Id of the work task
+
++ Response 200 (application/json)
+
+        {
+            "work_task": {
+                "id": 1,
+                "status": "Completed",
+                "created_at": "2013-07-24T02:37:32Z",
+                "updated_at": "2013-10-15T16:35:01Z",
+                "completed_at": "2013-10-15T16:35:01Z",
+                "saved_document_summary": {
+                    "id_saved_orderset": "0e895786-0140-e7c9-36bd-7f000101aa77",
+                    "title": "ICU Ventilated Patient Admission Order Set",
+                    "active_version": 5,
+                    "version": 5,
+                    "facility_id": "",
+                    "id_entrypoint_client": 3,
+                    "id_entrypoint_user": 13,
+                    "id_approving_user": null,
+                    "id_patient": 6890,
+                    "state": "Submitted",
+                    "draft_ts": null,
+                    "effective_at": "2013-07-24T02:37:35Z",
+                    "visible": "Y",
+                    "user_given_name_1": "Alfred",
+                    "user_family_name": "Wong",
+                    "id_local_document_info": 10,
+                    "mrn": "MRN3094926559",
+                    "last_name": "Smith",
+                    "first_name": "Boris",
+                    "middle_name": "Sid",
+                    "evidence_available": true,
+                    "associated_documents_available": true
+                },
+                "notes": [
+                    {
+                        "note": {
+                            "id": 8,
+                            "content": "test",
+                            "created_at": "2013-07-31T19:14:20Z",
+                            "updated_at": "2013-07-31T19:14:20Z",
+                            "entrypoint_user": {}
+                        }
+                    },
+                    {
+                        "note": {
+                            "id": 9,
+                            "content": "Getting drugs ready",
+                            "created_at": "2013-07-31T19:17:24Z",
+                            "updated_at": "2013-07-31T19:17:24Z",
+                            "entrypoint_user": {}
+                        }
+                    },
+                    {
+                        "note": {
+                            "id": 13,
+                            "content": "Something of value",
+                            "created_at": "2013-10-17T20:58:14Z",
+                            "updated_at": "2013-10-17T20:58:14Z",
+                            "entrypoint_user": {
+                                "first_name": "Alfred",
+                                "middle_name": "",
+                                "last_name": "Wong"
+                            }
+                        }
+                    }
+                ],
+                "task_queue": {
+                    "id": 3,
+                    "name": "Pharmacy"
+                }
+            }
+        }
+
+## Start a work task [/liveq/work_tasks/<work_task_id>/start]
+### Transitions the work task to a "In Progress" status (beta) [POST]
+
++ Parameters
+    + work_task_id (string) ... Id of the work task
+
++ Response 200 (application/json)
+
+        {
+            "work_task": {
+                "id": 1,
+                "status": "In Progress",
+                "created_at": "2013-07-24T02:37:32Z",
+                "updated_at": "2013-10-15T16:35:01Z",
+                "completed_at": "2013-10-15T16:35:01Z",
+                "saved_document_summary": {
+                    "id_saved_orderset": "0e895786-0140-e7c9-36bd-7f000101aa77",
+                    "title": "ICU Ventilated Patient Admission Order Set",
+                    "active_version": 5,
+                    "version": 5,
+                    "facility_id": "",
+                    "id_entrypoint_client": 3,
+                    "id_entrypoint_user": 13,
+                    "id_approving_user": null,
+                    "id_patient": 6890,
+                    "state": "Submitted",
+                    "draft_ts": null,
+                    "effective_at": "2013-07-24T02:37:35Z",
+                    "visible": "Y",
+                    "user_given_name_1": "Alfred",
+                    "user_family_name": "Wong",
+                    "id_local_document_info": 10,
+                    "mrn": "MRN3094926559",
+                    "last_name": "Smith",
+                    "first_name": "Boris",
+                    "middle_name": "Sid",
+                    "evidence_available": true,
+                    "associated_documents_available": true
+                },
+                "notes": [
+                    {
+                        "note": {
+                            "id": 8,
+                            "content": "test",
+                            "created_at": "2013-07-31T19:14:20Z",
+                            "updated_at": "2013-07-31T19:14:20Z",
+                            "entrypoint_user": {}
+                        }
+                    },
+                    {
+                        "note": {
+                            "id": 9,
+                            "content": "Getting drugs ready",
+                            "created_at": "2013-07-31T19:17:24Z",
+                            "updated_at": "2013-07-31T19:17:24Z",
+                            "entrypoint_user": {}
+                        }
+                    },
+                    {
+                        "note": {
+                            "id": 13,
+                            "content": "Something of value",
+                            "created_at": "2013-10-17T20:58:14Z",
+                            "updated_at": "2013-10-17T20:58:14Z",
+                            "entrypoint_user": {
+                                "first_name": "Alfred",
+                                "middle_name": "",
+                                "last_name": "Wong"
+                            }
+                        }
+                    }
+                ],
+                "task_queue": {
+                    "id": 3,
+                    "name": "Pharmacy"
+                }
+            }
+        }
+                
+  
+## Stop a work task [/liveq/work_tasks/{work_task_id}/stop]
+### Transitions the work task to a "Idle" status (beta) [POST]
+
++ Parameters
+    + work_task_id (string) ... Id of the work task
+
++ Response 200 (application/json)
+
+        {
+            "work_task": {
+                "id": 1,
+                "status": "Idle",
+                "created_at": "2013-07-24T02:37:32Z",
+                "updated_at": "2013-10-15T16:35:01Z",
+                "completed_at": "2013-10-15T16:35:01Z",
+                "saved_document_summary": {
+                    "id_saved_orderset": "0e895786-0140-e7c9-36bd-7f000101aa77",
+                    "title": "ICU Ventilated Patient Admission Order Set",
+                    "active_version": 5,
+                    "version": 5,
+                    "facility_id": "",
+                    "id_entrypoint_client": 3,
+                    "id_entrypoint_user": 13,
+                    "id_approving_user": null,
+                    "id_patient": 6890,
+                    "state": "Submitted",
+                    "draft_ts": null,
+                    "effective_at": "2013-07-24T02:37:35Z",
+                    "visible": "Y",
+                    "user_given_name_1": "Alfred",
+                    "user_family_name": "Wong",
+                    "id_local_document_info": 10,
+                    "mrn": "MRN3094926559",
+                    "last_name": "Smith",
+                    "first_name": "Boris",
+                    "middle_name": "Sid",
+                    "evidence_available": true,
+                    "associated_documents_available": true
+                },
+                "notes": [
+                    {
+                        "note": {
+                            "id": 8,
+                            "content": "test",
+                            "created_at": "2013-07-31T19:14:20Z",
+                            "updated_at": "2013-07-31T19:14:20Z",
+                            "entrypoint_user": {}
+                        }
+                    },
+                    {
+                        "note": {
+                            "id": 9,
+                            "content": "Getting drugs ready",
+                            "created_at": "2013-07-31T19:17:24Z",
+                            "updated_at": "2013-07-31T19:17:24Z",
+                            "entrypoint_user": {}
+                        }
+                    },
+                    {
+                        "note": {
+                            "id": 13,
+                            "content": "Something of value",
+                            "created_at": "2013-10-17T20:58:14Z",
+                            "updated_at": "2013-10-17T20:58:14Z",
+                            "entrypoint_user": {
+                                "first_name": "Alfred",
+                                "middle_name": "",
+                                "last_name": "Wong"
+                            }
+                        }
+                    }
+                ],
+                "task_queue": {
+                    "id": 3,
+                    "name": "Pharmacy"
+                }
+            }
+        }
+        
+## Create work task note [/api/liveq/work_tasks/{work_task_id}/notes]
+### Create a note for the given work task [POST]
+
++ Parameter
+    + work_task_id (string) ... Id of the work task
+    + note[content] (string) ... Content of the note
+
++ Response 200 (application/json)
+
+        {
+            "data": {
+                "note": {
+                    "id": 1,
+                    "content": "New content",
+                    "created_at": "2013-11-19T17:01:15Z",
+                    "updated_at": "2013-11-19T17:01:15Z",
+                    "entrypoint_user": {
+                        "first_name": "ww",
+                        "middle_name": "",
+                        "last_name": "Wang"
+                    }
+                }
+            }
+        }
+
         
 # Group Cached Resources   
 
