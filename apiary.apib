@@ -201,83 +201,145 @@ The partial matching can start at any position in the string. (eg. "ith" matches
 + Response 200 (application/json)
 
         {
-            "work_task": {
-                "id": 1,
-                "status": "Completed",
-                "created_at": "2013-07-24T02:37:32Z",
-                "updated_at": "2013-10-15T16:35:01Z",
-                "completed_at": "2013-10-15T16:35:01Z",
-                "saved_document_summary": {
-                    "id_saved_orderset": "0e895786-0140-e7c9-36bd-7f000101aa77",
-                    "title": "ICU Ventilated Patient Admission Order Set",
-                    "active_version": 5,
-                    "version": 5,
-                    "facility_id": "",
-                    "id_entrypoint_client": 3,
-                    "id_entrypoint_user": 13,
-                    "id_approving_user": null,
-                    "id_patient": 6890,
-                    "state": "Submitted",
-                    "draft_ts": null,
-                    "effective_at": "2013-07-24T02:37:35Z",
-                    "visible": "Y",
-                    "user_given_name_1": "Alfred",
-                    "user_family_name": "Wong",
-                    "id_local_document_info": 10,
-                    "mrn": "MRN3094926559",
-                    "last_name": "Smith",
-                    "first_name": "Boris",
-                    "middle_name": "Sid",
-                    "evidence_available": true,
-                    "associated_documents_available": true
-                },
-                "notes": [
-                    {
-                        "note": {
-                            "id": 8,
-                            "content": "test",
-                            "created_at": "2013-07-31T19:14:20Z",
-                            "updated_at": "2013-07-31T19:14:20Z",
-                            "entrypoint_user": {
-                            }
-                        }
-                    },
-                    {
-                        "note": {
-                            "id": 9,
-                            "content": "Getting drugs ready",
-                            "created_at": "2013-07-31T19:17:24Z",
-                            "updated_at": "2013-07-31T19:17:24Z",
-                            "entrypoint_user": {
-                            }
-                        }
-                    },
-                    {
-                        "note": {
-                            "id": 13,
-                            "content": "Something of value",
-                            "created_at": "2013-10-17T20:58:14Z",
-                            "updated_at": "2013-10-17T20:58:14Z",
-                            "entrypoint_user": {
-                                "first_name": "Alfred",
-                                "middle_name": "",
-                                "last_name": "Wong"
-                            }
-                        }
-                    }
-                ],
-                "task_queue": {
-                    "id": 3,
-                    "name": "Pharmacy"
-                }
-            }
+            "data": [
+                {
+                    "work_task": {
+                        "id": 1,
+                        "status": "Completed",
+                        "created_at": "2013-07-24T02:37:32Z",
+                        "updated_at": "2013-10-15T16:35:01Z",
+                        "completed_at": "2013-10-15T16:35:01Z",
+                        "saved_document_summary": {
+                            "id_saved_orderset": "0e895786-0140-e7c9-36bd-7f000101aa77",
+                            "title": "ICU Ventilated Patient Admission Order Set",
+                            "active_version": 5,
+                            "version": 5,
+                            "facility_id": "",
+                            "id_entrypoint_client": 3,
+                            "id_entrypoint_user": 13,
+                            "id_approving_user": null,
+                            "id_patient": 6890,
+                            "state": "Submitted",
+                            "draft_ts": null,
+                            "effective_at": "2013-07-24T02:37:35Z",
+                            "visible": "Y",
+                            "user_given_name_1": "Alfred",
+                            "user_family_name": "Wong",
+                            "id_local_document_info": 10,
+                            "mrn": "MRN3094926559",
+                            "last_name": "Smith",
+                            "first_name": "Boris",
+                            "middle_name": "Sid",
+                            "evidence_available": true,
+                            "associated_documents_available": true
+                        },
+                        "notes": [
+                            {
+                                "note": {
+                                    "id": 8,
+                                    "content": "test",
+                                    "created_at": "2013-07-31T19:14:20Z",
+                                    "updated_at": "2013-07-31T19:14:20Z",
+                                    "entrypoint_user": {}
+                                }
+                            },
+                            {
+                                "note": {
+                                    "id": 9,
+                                    "content": "Getting drugs ready",
+                                    "created_at": "2013-07-31T19:17:24Z",
+                                    "updated_at": "2013-07-31T19:17:24Z",
+                                    "entrypoint_user": {}
+                                }
+                            },
+                            {
+                                "note": {
+                                    "id": 13,
+                                    "content": "Something of value",
+                                    "created_at": "2013-10-17T20:58:14Z",
+                                    "updated_at": "2013-10-17T20:58:14Z",
+                                    "entrypoint_user": {
+                                        "first_name": "Alfred",
+                                        "middle_name": "",
+                                        "last_name": "Wong"
+                                    }
+                                }
+                            }
+                        ],
+                        "task_queue": {
+                            "id": 3,
+                            "name": "Pharmacy"
+                        }
+                    }
+                },
+                {
+                    "work_task": {
+                        "id": 2,
+                        "status": "Completed",
+                        "created_at": "2013-07-24T02:37:32Z",
+                        "updated_at": "2013-10-07T18:38:17Z",
+                        "completed_at": "2013-10-07T18:38:17Z",
+                        "saved_document_summary": {
+                            "id_saved_orderset": "0e895786-0140-e7c9-36bd-7f000101aa77",
+                            "title": "ICU Ventilated Patient Admission Order Set",
+                            "active_version": 5,
+                            "version": 5,
+                            "facility_id": "",
+                            "id_entrypoint_client": 3,
+                            "id_entrypoint_user": 13,
+                            "id_approving_user": null,
+                            "id_patient": 6890,
+                            "state": "Submitted",
+                            "draft_ts": null,
+                            "effective_at": "2013-07-24T02:37:35Z",
+                            "visible": "Y",
+                            "user_given_name_1": "Alfred",
+                            "user_family_name": "Wong",
+                            "id_local_document_info": 10,
+                            "mrn": "MRN3094926559",
+                            "last_name": "Smith",
+                            "first_name": "Boris",
+                            "middle_name": "Sid",
+                            "evidence_available": true,
+                            "associated_documents_available": true
+                        },
+                        "notes": [
+                            {
+                                "note": {
+                                    "id": 1,
+                                    "content": "Test Note",
+                                    "created_at": "2013-07-24T02:43:09Z",
+                                    "updated_at": "2013-07-24T02:43:09Z",
+                                    "entrypoint_user": {}
+                                }
+                            },
+                            {
+                                "note": {
+                                    "id": 2,
+                                    "content": "Starting the task",
+                                    "created_at": "2013-07-24T02:57:13Z",
+                                    "updated_at": "2013-07-24T02:57:13Z",
+                                    "entrypoint_user": {}
+                                }
+                            },
+                            {
+                                "note": {
+                                    "id": 3,
+                                    "content": "Finished",
+                                    "created_at": "2013-07-24T02:58:05Z",
+                                    "updated_at": "2013-07-24T02:58:05Z",
+                                    "entrypoint_user": {}
+                                }
+                            }
+                        ],
+                        "task_queue": {
+                            "id": 4,
+                            "name": "Nurse"
+                        }
+                    }
+                }
+            ]
         }
-        
-## Work task search [/liveq/work_tasks/search]
-### Gets a list of work tasks [GET]
-
-+ Parameters
-    + 
         
 # Group Cached Resources   
 
