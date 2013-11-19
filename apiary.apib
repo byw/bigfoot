@@ -156,6 +156,52 @@ The partial matching can start at any position in the string. (eg. "ith" matches
         
         
         
+# Group Cached Resources   
+
+## Cached Resource Information [/cached_resources/@{saved_orderset_id}/information]
+### Information for the cached resource - title and number of pages. (beta) [GET]
+
++ Parameter
+    + saved_orderset_id (string) ... The id of the saved orderset
+    
++ Response 200 (application/json)
+        
+        {
+            cached_resource: 
+            {
+                title: "WSIB REC Multidisciplinary Health Care Assessment Summary Report",
+                number_of_pages: 1,
+                has_summary_view: false,
+                number_of_summary_pages: 1,
+                "hypermedia_links": {
+                    "pdfUrl": "http://patientos.bw.dev.pos:3000/api/cached_resources/001c2ed9-013b-fec7-6fe4-7f000101aa77/pdf",
+                    "imageUrls": [
+                        "http://patientos.bw.dev.pos:3000/api/cached_resources/001c2ed9-013b-fec7-6fe4-7f000101aa77/page_image/0"
+                    ]
+                }
+            }
+        }
+
+## Cached Resource PDF [/api/cached_resources/@{saved_orderset_id}/pdf]
+### PDF of the cached resource. [GET]
+
++ Parameter
+    + saved_orderset_id (string) ... The id of the saved orderset
+
++ Response 200 (application/pdf)
+
+
+## Cached Resource PDF [/api/cached_resources/@{saved_orderset_id}/page_image/{page_number}]
+### PDF of the cached resource. [GET]
+
++ Parameter
+    + saved_orderset_id (string) ... The id of the saved orderset
+    + page_number (string) ... The page number. You need to retrieve one page image agt a time.
+
++ Response 200 (application/png)
+        
+        
+
 # Group Associated Documents   
 
 ## Associated Documents [/associated_documents]
