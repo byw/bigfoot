@@ -775,19 +775,24 @@ The partial matching can start at any position in the string. (eg. "ith" matches
 + Response 200 (application/json)
         
         {
-            cached_resource: 
-            {
-                title: "WSIB REC Multidisciplinary Health Care Assessment Summary Report",
-                number_of_pages: 1,
-                has_summary_view: false,
-                number_of_summary_pages: 1,
-                "hypermedia_links": {
-                    "pdfUrl": "http://patientos.bw.dev.pos:3000/api/cached_resources/001c2ed9-013b-fec7-6fe4-7f000101aa77/pdf",
-                    "imageUrls": [
-                        "http://patientos.bw.dev.pos:3000/api/cached_resources/001c2ed9-013b-fec7-6fe4-7f000101aa77/page_image/0"
-                    ]
-                }
-            }
+          "cached_resource": {
+            "title": "WSIB REC Multidisciplinary Health Care Assessment Summary Report",
+            "number_of_pages": 1,
+            "has_summary_view": true,
+            "number_of_summary_pages": 3,
+            "hypermedia_links": {
+              "pdfUrl": "http://patientos.bw.dev.pos:3000/api/cached_resources/001c2ed9-013b-fec7-6fe4-7f000101aa77/pdf",
+              "imageUrls": [
+                "http://patientos.bw.dev.pos:3000/api/cached_resources/001c2ed9-013b-fec7-6fe4-7f000101aa77/page_image/0"
+              ],
+              "summaryPdfUrl": "http://patientos.bw.dev.pos:3000/api/cached_resources/001c2ed9-013b-fec7-6fe4-7f000101aa77/pdf?summary_view=true",
+              "summaryImageUrls": [
+                "http://patientos.bw.dev.pos:3000/api/cached_resources/001c2ed9-013b-fec7-6fe4-7f000101aa77/page_image/0?pprotocol=http&summary_view=true",
+                "http://patientos.bw.dev.pos:3000/api/cached_resources/001c2ed9-013b-fec7-6fe4-7f000101aa77/page_image/1?pprotocol=http&summary_view=true",
+                "http://patientos.bw.dev.pos:3000/api/cached_resources/001c2ed9-013b-fec7-6fe4-7f000101aa77/page_image/2?pprotocol=http&summary_view=true"
+              ]
+            }
+          }
         }
 
 ## Cached Resource PDF [/api/cached_resources/@{saved_orderset_id}/pdf]
@@ -795,6 +800,7 @@ The partial matching can start at any position in the string. (eg. "ith" matches
 
 + Parameter
     + saved_orderset_id (string) ... The id of the saved orderset
+    + summary_view (optional, string) ... Whether this is a summary PDF. Any string value would indicate true.
 
 + Response 200 (application/pdf)
 
@@ -805,6 +811,7 @@ The partial matching can start at any position in the string. (eg. "ith" matches
 + Parameter
     + saved_orderset_id (string) ... The id of the saved orderset
     + page_number (string) ... The page number. You need to retrieve one page image agt a time.
+    + summary_view (optional, string) ... Whether this is a summary page image. Any string value would indicate true.
 
 + Response 200 (application/png)
         
